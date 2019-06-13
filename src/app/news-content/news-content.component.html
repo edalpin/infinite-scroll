@@ -1,0 +1,18 @@
+<table>
+  <head>
+    <tr>
+      <td>Id</td>
+      <td>Title</td>
+      <td>Points</td>
+      <td>User</td>
+    </tr>
+  </head>
+  <body>
+    <tr *ngFor="let new of news">
+      <td>{{new.id}}</td>
+      <td>{{new.title}}</td>
+      <td>{{new.points}}</td>
+      <td>{{new.user}}</td>
+    </tr>
+  </body>
+</table>
