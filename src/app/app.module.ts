@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NewsContentComponent } from './news-content/news-content.component';
 import { NewsService } from './services/news.service';
+import { InfiniteScrollDirective } from './directives/infinite-scroll.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsContentComponent
+    NewsContentComponent,
+    InfiniteScrollDirective
   ],
   imports: [
     BrowserModule,

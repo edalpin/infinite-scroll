@@ -10,11 +10,24 @@ import { News } from '../interfaces/news.interface';
 })
 export class NewsContentComponent implements OnInit {
   news: News[];
+  loadingNews = false;
   page = 1;
 
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.newsService.getNews(this.page).subscribe((news: News[]) => this.news = news);
+    this.newsService.getNews(this.page).subscribe((news: News[]) => {
+      this.news = news;
+      this.page++;
+    });
+  }
+
+  getMoreNews(): void {
+    this.loadingNews = true;
+    this.newsService.getNews(this.page).subscribe((news: News[]) => {
+      this.news.push(...news);
+      this.loadingNews = false;
+      this.page++;
+    });
   }
 }

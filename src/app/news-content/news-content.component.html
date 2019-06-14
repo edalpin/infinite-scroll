@@ -1,18 +1,18 @@
-<table>
-  <head>
+<div class="table-content" appInfiniteScroll (eventFound)="getMoreNews()">
+  <table>
     <tr>
-      <td>Id</td>
-      <td>Title</td>
-      <td>Points</td>
-      <td>User</td>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Points</th>
+      <th>User</th>
     </tr>
-  </head>
-  <body>
     <tr *ngFor="let new of news">
       <td>{{new.id}}</td>
       <td>{{new.title}}</td>
       <td>{{new.points}}</td>
       <td>{{new.user}}</td>
     </tr>
-  </body>
-</table>
+  </table>
+
+  <h1 *ngIf="loadingNews">Cargandoooooo ...</h1>
+</div>
